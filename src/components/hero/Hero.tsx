@@ -79,8 +79,12 @@ export function Hero() {
 
           <motion.h1
             id="hero-title"
-            variants={revealItem}
-            transition={{ duration: 0.65 }}
+            variants={
+              shouldReduceMotion
+                ? { hidden: { opacity: 1, y: 0 }, visible: { opacity: 1, y: 0 } }
+                : { hidden: { opacity: 1, y: 20 }, visible: { opacity: 1, y: 0 } }
+            }
+            transition={{ duration: shouldReduceMotion ? 0 : 0.65 }}
             className="hero-name font-display text-[clamp(4.35rem,15vw,8.5rem)] font-black leading-[0.78] tracking-[-0.075em] text-white"
           >
             GENJI

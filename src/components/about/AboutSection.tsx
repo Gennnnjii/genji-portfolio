@@ -126,8 +126,7 @@ export function AboutSection() {
               />
             </svg>
 
-            <motion.dl
-              className="relative grid gap-3 sm:grid-cols-2"
+            <motion.div
               variants={{
                 hidden: {},
                 visible: { transition: { staggerChildren: shouldReduceMotion ? 0 : 0.08 } },
@@ -136,28 +135,30 @@ export function AboutSection() {
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
             >
-              {aboutDetails.map((detail) => (
-                <motion.div
-                  key={detail.code}
-                  variants={revealItem}
-                  transition={{ duration: 0.5 }}
-                  className={`group relative min-h-32 overflow-hidden rounded-xl border border-white/[0.07] bg-[#061018]/75 p-5 transition-colors hover:border-cyan-200/20 hover:bg-[#08151e]/90 ${
-                    detail.featured ? 'sm:col-span-2' : ''
-                  }`}
-                >
-                  <span className="absolute right-4 top-4 font-mono text-[8px] tracking-[0.18em] text-slate-700">
-                    {detail.code}
-                  </span>
-                  <dt className="pr-14 font-mono text-[9px] uppercase tracking-[0.2em] text-cyan-200/55">
-                    {detail.label}
-                  </dt>
-                  <dd className="mt-5 max-w-md text-sm font-semibold leading-6 text-slate-200 sm:text-base">
-                    {detail.value}
-                  </dd>
-                  <span className="absolute inset-x-0 bottom-0 h-px origin-left scale-x-0 bg-gradient-to-r from-cyan-300/60 to-transparent transition-transform duration-500 group-hover:scale-x-100" />
-                </motion.div>
-              ))}
-            </motion.dl>
+              <dl className="relative grid gap-3 sm:grid-cols-2">
+                {aboutDetails.map((detail) => (
+                  <motion.div
+                    key={detail.code}
+                    variants={revealItem}
+                    transition={{ duration: 0.5 }}
+                    className={`group relative min-h-32 overflow-hidden rounded-xl border border-white/[0.07] bg-[#061018]/75 p-5 transition-colors hover:border-cyan-200/20 hover:bg-[#08151e]/90 ${
+                      detail.featured ? 'sm:col-span-2' : ''
+                    }`}
+                  >
+                    <dt className="pr-14 font-mono text-[9px] uppercase tracking-[0.2em] text-cyan-200/55">
+                      {detail.label}
+                      <span className="absolute right-4 top-4 font-mono text-[8px] tracking-[0.18em] text-slate-700" aria-hidden="true">
+                        {detail.code}
+                      </span>
+                    </dt>
+                    <dd className="relative mt-5 max-w-md text-sm font-semibold leading-6 text-slate-200 sm:text-base">
+                      {detail.value}
+                      <span className="absolute inset-x-[-1.25rem] bottom-[-1.25rem] h-px origin-left scale-x-0 bg-gradient-to-r from-cyan-300/60 to-transparent transition-transform duration-500 group-hover:scale-x-100" aria-hidden="true" />
+                    </dd>
+                  </motion.div>
+                ))}
+              </dl>
+            </motion.div>
           </motion.div>
         </div>
       </div>

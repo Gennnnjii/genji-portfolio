@@ -40,6 +40,8 @@ export function ProfileVisual({ imageSrc, name }: ProfileVisualProps) {
               alt={name}
               width={1122}
               height={1402}
+              srcSet={`${imageSrc.replace('genji-profile.jpg', 'genji-profile-600w.jpg')} 600w, ${imageSrc} 1122w`}
+              sizes="(max-width: 640px) 352px, (max-width: 1024px) 400px, 432px"
               className="h-full w-full object-cover object-center"
               loading="eager"
               decoding="async"
