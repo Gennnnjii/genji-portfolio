@@ -4,7 +4,7 @@ Personal portfolio of **Kevin T. Tolentino (Genji)**, a 4th-year BS Information 
 
 This portfolio highlights hands-on projects in enterprise networking, system integration, web development, mobile development, and technical troubleshooting.
 
-> Live portfolio: Coming soon
+> Live portfolio: https://genji-portfolio-ashy.vercel.app
 
 ---
 
@@ -232,4 +232,4 @@ Email: genjitolentino@gmail.com
 
 The portfolio is actively maintained as I continue developing my skills and completing my BS Information Technology degree.
 
-A live deployment URL will be added after production deployment.
+Live portfolio: https://genji-portfolio-ashy.vercel.app
