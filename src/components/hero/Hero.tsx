@@ -77,21 +77,20 @@ export function Hero() {
             </p>
           </motion.div>
 
-          <motion.h1
+          <h1
             id="hero-title"
-            variants={
-              shouldReduceMotion
-                ? { hidden: { opacity: 1, y: 0 }, visible: { opacity: 1, y: 0 } }
-                : { hidden: { opacity: 1, y: 20 }, visible: { opacity: 1, y: 0 } }
-            }
-            transition={{ duration: shouldReduceMotion ? 0 : 0.65 }}
             className="hero-name font-display text-[clamp(4.35rem,15vw,8.5rem)] font-black leading-[0.78] tracking-[-0.075em] text-white"
           >
             GENJI
-            <span className="bg-gradient-to-b from-cyan-200 to-blue-500 bg-clip-text text-transparent">
+            <motion.span
+              className="inline-block bg-gradient-to-b from-cyan-200 to-blue-500 bg-clip-text text-transparent"
+              initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.75 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.35, delay: 0.12, ease: 'easeOut' }}
+            >
               .
-            </span>
-          </motion.h1>
+            </motion.span>
+          </h1>
 
           <motion.div variants={revealItem} transition={{ duration: 0.65 }} className="mt-8 sm:mt-10">
             <h2 className="max-w-2xl text-[clamp(1.45rem,3vw,2.25rem)] font-semibold leading-[1.16] tracking-[-0.035em] text-slate-100">
