@@ -1,5 +1,6 @@
 export type CredentialAccent = 'cyan' | 'blue'
 export type CredentialProminence = 'standard' | 'feature' | 'wide' | 'foundation'
+export type CredentialSection = 'network' | 'general-it'
 
 export type Certification = {
   id: string
@@ -7,14 +8,17 @@ export type Certification = {
   title: string
   issuer: string
   category: string
+  section: CredentialSection
   issued?: string
   expires?: string
+  score?: string
+  credentialId?: string
   mark: string
   accent: CredentialAccent
   prominence: CredentialProminence
   badgeAlt: string
   badgeSrc: string | null
-  plannedBadgeSource: string
+  plannedBadgeSource: string | null
   certificateUrl: string | null
   verificationUrl: string | null
 }
@@ -26,7 +30,8 @@ export const certifications: readonly Certification[] = [
     title: 'Cisco Networking Devices and Initial Configuration',
     issuer: 'Cisco',
     category: 'Networking',
-    issued: 'Jul 19, 2026',
+    section: 'network',
+    issued: 'Jul 2026',
     mark: 'CFG',
     accent: 'cyan',
     prominence: 'standard',
@@ -42,7 +47,8 @@ export const certifications: readonly Certification[] = [
     title: 'Cisco Network Technician Career Path',
     issuer: 'Cisco',
     category: 'Networking / Career Path',
-    issued: 'Jul 19, 2026',
+    section: 'network',
+    issued: 'Jul 2026',
     mark: 'PATH',
     accent: 'blue',
     prominence: 'feature',
@@ -58,7 +64,8 @@ export const certifications: readonly Certification[] = [
     title: 'Cisco Network Addressing and Basic Troubleshooting',
     issuer: 'Cisco',
     category: 'Networking',
-    issued: 'Jul 17, 2026',
+    section: 'network',
+    issued: 'Jul 2026',
     mark: 'ADDR',
     accent: 'cyan',
     prominence: 'standard',
@@ -74,7 +81,8 @@ export const certifications: readonly Certification[] = [
     title: 'Cisco Network Support and Security',
     issuer: 'Cisco',
     category: 'Networking / Security',
-    issued: 'Jul 15, 2026',
+    section: 'network',
+    issued: 'Jul 2026',
     mark: 'SEC',
     accent: 'blue',
     prominence: 'standard',
@@ -90,7 +98,8 @@ export const certifications: readonly Certification[] = [
     title: 'Cisco Networking Basics',
     issuer: 'Cisco',
     category: 'Networking Fundamentals',
-    issued: 'Jul 13, 2026',
+    section: 'network',
+    issued: 'Jul 2026',
     mark: 'NET',
     accent: 'cyan',
     prominence: 'standard',
@@ -106,6 +115,7 @@ export const certifications: readonly Certification[] = [
     title: 'IT Specialist – Networking',
     issuer: 'Certiport / Pearson VUE',
     category: 'Networking Certification',
+    section: 'network',
     issued: 'Oct 15, 2025',
     expires: 'Oct 15, 2030',
     mark: 'ITS',
@@ -123,7 +133,8 @@ export const certifications: readonly Certification[] = [
     title: 'CompTIA IT Fundamentals+ (ITF+) Certification',
     issuer: 'CompTIA',
     category: 'IT Fundamentals',
-    issued: 'Jul 1, 2024',
+    section: 'general-it',
+    issued: 'Jul 2024',
     mark: 'ITF+',
     accent: 'cyan',
     prominence: 'foundation',
@@ -132,6 +143,25 @@ export const certifications: readonly Certification[] = [
     plannedBadgeSource: '/images/certifications/comptia-itf-plus.png',
     certificateUrl:
       '/certifications/CompTIA%20IT%20Fundamentals%20(ITF+)%20Certification%20certificate.pdf',
+    verificationUrl: null,
+  },
+  {
+    id: 'topcit-level-4',
+    code: 'CRED / 08',
+    title: 'TOPCIT – Test of Practical Competency in ICT (Level 4)',
+    issuer: 'Institute for Information & Communications Technology Promotion (IITP)',
+    category: 'ICT Competency Assessment',
+    section: 'general-it',
+    issued: 'Sep 2026',
+    score: '675 / 1000',
+    credentialId: 'TL2603001155',
+    mark: 'TOPCIT',
+    accent: 'cyan',
+    prominence: 'wide',
+    badgeAlt: 'TOPCIT official logo',
+    badgeSrc: '/images/certifications/topcit.svg',
+    plannedBadgeSource: '/images/certifications/topcit.svg',
+    certificateUrl: '/certifications/topcit-level-4-kevin-tolentino.pdf',
     verificationUrl: null,
   },
 ]

@@ -7,10 +7,10 @@ import { EducationPanel } from './EducationPanel'
 export function CertificationsSection() {
   const shouldReduceMotion = useReducedMotion()
   const networkCredentials = certifications.filter(
-    (certification) => certification.prominence !== 'foundation',
+    (certification) => certification.section === 'network',
   )
-  const foundationCredentials = certifications.filter(
-    (certification) => certification.prominence === 'foundation',
+  const generalItCredentials = certifications.filter(
+    (certification) => certification.section === 'general-it',
   )
 
   return (
@@ -76,12 +76,12 @@ export function CertificationsSection() {
         <div className="mt-16 lg:mt-20">
           <div className="mb-6 flex items-center gap-3">
             <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-cyan-200/50">
-              Foundation / IT
+              IT / ICT Credentials
             </span>
             <span className="h-px flex-1 bg-gradient-to-r from-cyan-300/15 to-transparent" aria-hidden="true" />
           </div>
           <div className="grid gap-4 lg:grid-cols-12">
-            {foundationCredentials.map((certification, index) => (
+            {generalItCredentials.map((certification, index) => (
               <CertificationCard
                 key={certification.id}
                 certification={certification}
