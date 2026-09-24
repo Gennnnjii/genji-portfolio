@@ -86,6 +86,26 @@ export function CertificationCard({ certification, index }: CertificationCardPro
                 </dd>
               </div>
             )}
+            {certification.score && (
+              <div>
+                <dt className="font-mono text-[8px] uppercase tracking-[0.18em] text-slate-700">
+                  Score
+                </dt>
+                <dd className="mt-1.5 text-xs font-semibold text-slate-300">
+                  {certification.score}
+                </dd>
+              </div>
+            )}
+            {certification.credentialId && (
+              <div>
+                <dt className="font-mono text-[8px] uppercase tracking-[0.18em] text-slate-700">
+                  Credential ID
+                </dt>
+                <dd className="mt-1.5 text-xs font-semibold text-slate-300">
+                  {certification.credentialId}
+                </dd>
+              </div>
+            )}
           </dl>
 
           {certification.certificateUrl && (
